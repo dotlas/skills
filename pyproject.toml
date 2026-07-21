@@ -1,0 +1,18 @@
+[project]
+name = "dotlas-skills"
+version = "0"
+description = "Dotlas shared catalog of agent skills"
+requires-python = ">=3.11"
+
+[tool.flowmark]
+width = 88
+semantic = true
+cleanups = true
+smartquotes = true
+ellipses = true
+
+[dependency-groups]
+dev = [
+  "flowmark==0.7.2",
+  "lefthook==2.1.10",
+]
