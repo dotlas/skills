@@ -19,11 +19,11 @@
         "./skills/generic/custom/codebase-integrity",
         "./skills/generic/custom/commit",
         "./skills/generic/custom/diagnostic-loop",
+        "./skills/generic/custom/eli5",
         "./skills/generic/custom/import-skill",
         "./skills/generic/custom/introspection",
         "./skills/generic/custom/plan-with-me",
-        "./skills/generic/custom/slack",
-        "./skills/generic/custom/viber"
+        "./skills/generic/custom/slack"
       ]
     },
     {
