@@ -1,8 +1,8 @@
 # Community Skills
 
 Open source skills by external authors, vendored for internal use at Dotlas.
-These are not Dotlas-authored — for skills built by Dotlas, see the
-[custom catalog](../custom/).
+These are not Dotlas-authored.
+For skills built by Dotlas, see the [custom catalog](../custom/).
 
 ## Common
 
@@ -23,7 +23,7 @@ These are not Dotlas-authored — for skills built by Dotlas, see the
 | Skill | Description |
 | --- | --- |
 | [improve-codebase-architecture](./coding/improve-codebase-architecture/) | Scan for architecture improvement opportunities and surface them as an HTML report. |
-| [qa](./coding/qa/) | Conversational bug-filing session — describe problems and the agent opens GitHub issues. |
+| [qa](./coding/qa/) | Conversational bug-filing session: describe problems and the agent opens GitHub issues. |
 | [resolving-merge-conflicts](./coding/resolving-merge-conflicts/) | Walk through and resolve an in-progress git merge or rebase conflict. |
 | [vercel-optimize](./coding/vercel-optimize/) | Metric-backed Vercel cost and performance optimization for Next.js, SvelteKit, and Nuxt. |
 | [vercel-react-best-practices](./coding/vercel-react-best-practices/) | React and Next.js performance patterns from Vercel Engineering. |
@@ -32,5 +32,5 @@ These are not Dotlas-authored — for skills built by Dotlas, see the
 
 | Skill | Description |
 | --- | --- |
-| [emil-design-eng](./ui-ux/emil-design-eng/) | UI polish philosophy — the invisible details and animation decisions that make software feel great. |
+| [emil-design-eng](./ui-ux/emil-design-eng/) | UI polish philosophy: the invisible details and animation decisions that make software feel great. |
 | [impeccable](./ui-ux/impeccable/) | Full-spectrum frontend design audit covering visual hierarchy, accessibility, motion, and UX copy. |

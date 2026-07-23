@@ -1,9 +1,9 @@
-# Coding — Custom
+# Coding
 
-Coding workflows built around Dotlas’s stack — Next.js, Vercel (team account), and our
+Coding workflows built around Dotlas’s stack: Next.js, Vercel (team account), and our
 codebase conventions.
-These go beyond the [community coding skills](../../community/README.md#coding) — where
-community skills cover general code quality and review patterns, these add
+These go beyond the [community coding skills](../../community/README.md#coding).
+Where community skills cover general code quality and review patterns, these add
 Vercel-account-aware integrations, opinionated commit conventions, and refactor
 workflows tuned to how we actually ship.
 
@@ -28,9 +28,9 @@ Query and stream Vercel runtime and build logs for the production deployment.
 
 **Good for:** diagnosing a 500 or 401 that appeared in prod; confirming a fix deployed
 cleanly; watching a deploy land in real time.
-Read-only — never deploys or mutates project state.
+Read-only. Never deploys or mutates project state.
 
-**Try:** `/vercel-logs` — the skill connects to the Vercel CLI and surfaces the most
+**Try:** `/vercel-logs`. The skill connects to the Vercel CLI and surfaces the most
 relevant runtime errors from the last deployment.
 
 * * *
@@ -43,7 +43,7 @@ Reconcile Vercel environment variables against `.env.local` and your app’s env
 secrets are missing before a new environment goes live; keeping `.env.local` in sync
 after a teammate adds a new variable.
 
-**Try:** `/vercel-env-sync` — the skill diffs your local env against Vercel’s and flags
+**Try:** `/vercel-env-sync`. The skill diffs your local env against Vercel’s and flags
 anything missing or mismatched.
 
 * * *
@@ -56,8 +56,8 @@ violations.
 **Good for:** before a major refactor; after merging a large feature branch; catching
 drift between what the codebase intends and what it actually does.
 
-**Try:** `/codebase-integrity` — produces a prioritised list of issues with file and
-line references.
+**Try:** `/codebase-integrity`. Produces a prioritised list of issues with file and line
+references.
 
 * * *
 
@@ -67,10 +67,10 @@ Dead code and duplication audit for Next.js, executed as a gated background work
 
 **Good for:** post-feature cleanup after a large build; reducing bundle size before a
 performance sprint; removing the accumulation of one-off experiments that never got
-deleted. Pure refactor — no behaviour or UX changes.
+deleted. Pure refactor, no behaviour or UX changes.
 
-**Try:** `/tidy-next-codebase` — the skill audits, proposes a plan, and executes in
-gated stages so you review before each batch lands.
+**Try:** `/tidy-next-codebase`. The skill audits, proposes a plan, and executes in gated
+stages so you review before each batch lands.
 
 * * *
 
@@ -83,7 +83,7 @@ behaviour.
 multiple places; preparing a shared component library; reducing the surface area before
 a design system migration.
 
-**Try:** `/ui-consolidation` — maps the component tree, identifies duplicates, and
+**Try:** `/ui-consolidation`. Maps the component tree, identifies duplicates, and
 proposes a consolidation plan for review.
 
 * * *
@@ -93,8 +93,8 @@ proposes a consolidation plan for review.
 Vendor a third-party skill into this catalog from skills.sh or a GitHub URL.
 
 **Good for:** adding a new community skill to the Dotlas catalog; keeping vendored
-skills pinned to a known-good version; importing a skill from a `npx skills add …`
+skills pinned to a known-good version; importing a skill from a `npx skills add ...`
 command someone shared.
 
 **Try:** `/import-skill https://skills.sh/vercel-labs/agent-skills/deep-research` or
-paste a `npx skills add …` command directly.
+paste a `npx skills add ...` command directly.

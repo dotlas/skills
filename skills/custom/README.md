@@ -2,7 +2,7 @@
 
 Skills authored by Dotlas.
 This is the right place if you’re looking for what we built.
-They reflect our specific workflows and tooling, but are fully open — usable by anyone
+They reflect our specific workflows and tooling, but are fully open and usable by anyone
 with a similar stack.
 For skills by other authors that we vendor, see [community](../community/).
 

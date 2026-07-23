@@ -1,9 +1,9 @@
 # Playbooks
 
 Application-profile-specific advice that shapes how recommendations are phrased and
-ordered. Playbooks never invent claims — every rec still traces to a verified candidate
-or finding.
-They tell the recommender what to emphasize when a project matches a profile.
+ordered.
+Playbooks never invent claims: every rec still traces to a verified candidate or
+finding. They tell the recommender what to emphasize when a project matches a profile.
 
 ## How a playbook gets applied
 
@@ -25,12 +25,14 @@ They tell the recommender what to emphasize when a project matches a profile.
 | Heavy MDX / markdown, mostly static routes | `content-site` |
 | Lots of `/(marketing)/` route groups, A/B test deps | `marketing` |
 
-`ai-application` is checked first — AI-shaped customers often share routes with
-SaaS/ecommerce surfaces, but the billing shape (AI Gateway dominant) and remediation set
-(provider failover, sandbox reuse, OIDC keyless) belong to this profile.
+`ai-application` is checked first.
+AI-shaped customers often share routes with SaaS/ecommerce surfaces, but the billing
+shape (AI Gateway dominant) and remediation set (provider failover, sandbox reuse, OIDC
+keyless) belong to this profile.
 
 When detection is uncertain, no playbook is applied.
-The recommender works fine without one — the playbook is a tilt, not a requirement.
+The recommender works fine without one.
+The playbook is a tilt, not a requirement.
 
 ## Playbook schema
 
@@ -41,7 +43,7 @@ reliably. Required sections:
 # {Profile name}
 
 ## Typical billing shape
-(Which dimensions dominate — e.g., "Edge Requests > Function Duration > Image Optimization")
+(Which dimensions dominate, e.g. "Edge Requests > Function Duration > Image Optimization")
 
 ## Priority patterns
 (Ordered list of patterns this profile particularly benefits from)
