@@ -29,6 +29,14 @@ Pick the situation first, then apply the principles below as the craft underneat
 | **Directing another agent (code)** | Translate intent into a precise instruction — name the exact files/tests to attach and the exact change to make, not a vague pointer. |
 | **Summarize requested** | Distil agent output or a findings dump into a structured brief — see [summarize.md](summarize.md). |
 
+## Output format
+
+- **Open with the answer** — first sentence is the answer, not a windup.
+- **Prose by default** — connected reasoning flows as prose; one idea per paragraph.
+- **Table** when comparing things across shared dimensions (e.g. *this vs that*).
+- **Bullets** for genuinely parallel, non-sequential items.
+- Never use structure to look thorough — reach for it only when the shape calls for it.
+
 * * *
 
 ## Not The Same Axis As Compression
