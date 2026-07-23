@@ -101,8 +101,11 @@ Show the user the exact stale list.
 stale skill — one call per skill, scoped to `claude-code`:
 
 ```sh
-npx skills remove -g -a claude-code <name> -y
+npx skills remove -g -a claude-code -s <name> -y
 ```
+
+The skill name **must** go behind `-s` — passed positionally the CLI mis-reads it as an
+agent name and fails.
 
 If the list is empty, say so and skip this step.
 
