@@ -27,6 +27,7 @@ Pick the situation first, then apply the principles below as the craft underneat
 | **Overview requested** | 4–6 sentences: what it’s for, the main pieces, how control/data moves end to end, how it’s validated. Discover this from the source. |
 | **Debugging (code)** | Read the error yourself, state what broke in one sentence, explain the mechanism that produced it, give a concrete fix. |
 | **Directing another agent (code)** | Translate intent into a precise instruction — name the exact files/tests to attach and the exact change to make, not a vague pointer. |
+| **Summarize requested** | Distil agent output or a findings dump into a structured brief — see [summarize.md](summarize.md). |
 
 * * *
 
