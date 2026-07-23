@@ -61,6 +61,9 @@ there’s an existing Z we could build on”). That grounds everything after it.
 If nothing is documented, say so and proceed on general best practice — don’t invent
 conventions that aren’t there.
 
+Also note which plan directory the project uses (`.plan/`, `.plans/`, `plans/`) — fall
+back to `.plan/` if none exists. Plans will be saved there.
+
 ### Phase 1 — Understand the vision
 
 Listen to the idea. Ask clarifying questions only if the core intent is genuinely
@@ -88,8 +91,7 @@ batch multiple decisions into a single call, as each answer shapes the next ques
 As decisions accumulate, keep a **running decision log** — numbered, each capturing what
 was decided, the options considered, why this one won, and any constraint it imposes
 downstream. Cite earlier decisions by number (“since #4 locked us into X, we’re limited
-to Y or Z here”). Every few decisions, offer to save a snapshot so nothing is lost if
-the conversation breaks off.
+to Y or Z here”).
 
 Sharpen the funnel as you go:
 - **Test assumptions against reality before baking them in.** When a choice depends on
@@ -119,8 +121,9 @@ Adapt to how the user responds:
 ### Phase 3 — Emit the plan
 
 When the critical decisions are settled (minor ones always remain — that’s fine), write
-a lightweight plan. Offer to save it, and suggest a sensible location.
-It contains:
+a lightweight plan and save it to the plan directory detected in Phase 0. Filename:
+`YYYY-MM-DD-{topic-slug}.md` (kebab-cased from the Phase 1 vision). Tell the user the
+path. It contains:
 - **Vision** — the feature from first principles, the why and the what, so anyone
   picking up a piece understands the whole.
 - **Decision log** — the numbered decisions from the session.
@@ -139,5 +142,6 @@ one, a single page is the honest size.
 ## If the session pauses
 
 On “save progress” or “let’s pause”, write the current state — decisions, open
-questions, notes — to a working file, clearly marked as in-progress rather than final.
-Resuming is then just reading it back.
+questions, notes — to the plan file (same path as Phase 3, overwriting any prior
+checkpoint). Mark it `status: in-progress` at the top; flip to `status: complete` when
+Phase 3 finalises it. Tell the user the path. Resuming is then just reading it back.
