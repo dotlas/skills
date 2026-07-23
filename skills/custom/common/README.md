@@ -14,13 +14,14 @@ between sessions.
 
 Explain anything from first principles, plain, structured, and grounded in context.
 
-**Good for:** understanding an unfamiliar part of the codebase, a dense PR, a baffling
-error message, or any concept where you need the why, not just the what.
+**Good for:** understanding anything dense or unfamiliar: a contract, a proposal, a
+research paper, a system design, a baffling error, or any concept where you need the
+why, not just the what.
 Different from community’s teach skill: unpack is reactive (explain this thing) rather
 than instructional (teach me this topic).
 
-**Try:** `/unpack` followed by pasting a confusing stack trace, a PR description, or a
-section of code.
+**Try:** `/unpack` followed by pasting anything you need explained: a document, a spec,
+a dense paragraph, a diagram description, or a confusing message.
 
 ### [plan-with-me](./plan-with-me/)
 
@@ -28,12 +29,13 @@ section of code.
 
 Co-author a plan with human decisions at every fork, one question at a time.
 
-**Good for:** planning a new feature that spans multiple surfaces (DB, API, UI); any
-situation where going off and planning alone would make wrong assumptions about product
-intent, business context, or team preferences.
+**Good for:** planning anything with real judgment calls: a product launch, a team
+initiative, a process change, a system design.
+Any situation where going off and planning alone would make wrong assumptions about
+intent, context, or priorities.
 
-**Try:** `/plan-with-me add multi-tenant support to the billing API`. The skill resolves
-one design question at a time, each with a recommendation, before writing a staged plan.
+**Try:** `/plan-with-me redesign our customer onboarding flow`. The skill resolves one
+question at a time, each with a recommendation, before writing a staged plan.
 
 * * *
 
@@ -57,14 +59,15 @@ without any on-the-fly judgment calls.
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzVxbng1MDVpYnNlMmF0ZTE3MnF5M2p1aWJwa2R6bWg1ejB3dGplaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kbtXXtZ7TBpnXH9lTF/giphy.gif" width="240" />
 
-Trace any issue through the codebase to a root cause: bug reports, anomalies, or “why is
-X happening” questions.
+Trace any question through the available sources to a clear answer: anomalies,
+unexpected results, or anything that needs investigating.
 
-**Good for:** diagnosing unexpected behaviour, Slack bugs reported by teammates, Vercel
-errors that don’t have an obvious source, or any “why is this broken” question.
+**Good for:** diagnosing unexpected behaviour, understanding why a metric moved,
+investigating a claim or report, or answering any “why is this happening” question
+across code, data, or context.
 
-**Try:** `/look-into-it checkout is throwing a 500 on the third payment attempt`. The
-skill reads the relevant code paths and surfaces what’s actually happening.
+**Try:** `/look-into-it why did sign-up conversion drop last week`. The skill reads the
+relevant sources and surfaces what’s actually happening.
 
 * * *
 
@@ -74,8 +77,8 @@ skill reads the relevant code paths and surfaces what’s actually happening.
 
 Post-task reflection that updates memory and surfaces stale skill or instruction files.
 
-**Good for:** end of a long session; after completing a task that changed how the
-codebase or team conventions work; keeping Claude’s memory accurate over time.
+**Good for:** end of a long session; after completing any task that produced lasting
+changes; keeping Claude’s memory accurate over time.
 
 **Try:** `/introspection` after any substantive session.
 The skill reviews what changed, updates the memory index, and flags any skill files that
@@ -93,6 +96,6 @@ Write or digest Slack messages: drafts, updates, and thread summaries.
 been tagged in, or catching up on a long thread without reading the whole thing.
 
 **Try:** `/slack summarise this thread` (paste the thread) or
-`/slack write a message to #product about the API latency incident`.
+`/slack write a message to #ops about the delayed vendor shipment`.
 
 * * *
