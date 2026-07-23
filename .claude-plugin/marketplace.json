@@ -20,7 +20,8 @@
         "./skills/custom/common/look-into-it",
         "./skills/custom/common/plan-with-me",
         "./skills/custom/common/slack",
-        "./skills/custom/common/unpack"
+        "./skills/custom/common/unpack",
+        "./skills/custom/common/update-global-dotlas-skills"
       ]
     },
     {

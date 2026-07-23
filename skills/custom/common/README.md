@@ -99,3 +99,18 @@ been tagged in, or catching up on a long thread without reading the whole thing.
 `/slack write a message to #ops about the delayed vendor shipment`.
 
 * * *
+
+### [update-global-dotlas-skills](./update-global-dotlas-skills/)
+
+<img src="https://media0.giphy.com/media/lU21XVNwliGM2gyGaN/giphy.gif" width="240" />
+
+Sync your global Dotlas skills to the catalog and prune renamed or dropped remnants.
+
+**Good for:** keeping your globally-installed skills current after the catalog changes;
+clearing out stale skills that `npx skills add` leaves behind (it installs but never
+prunes). Reconciles the global lock against the live catalog and removes only skills
+sourced from `dotlas/skills` that no longer exist, leaving skills from other authors
+untouched.
+
+**Try:** `/update-global-dotlas-skills`. The skill runs the global install, then shows
+any stale skills it found and asks before removing them.
