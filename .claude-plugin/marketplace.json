@@ -10,75 +10,72 @@
   },
   "plugins": [
     {
-      "name": "custom-generic",
-      "description": "First-party, framework-agnostic skills.",
+      "name": "custom-common",
+      "description": "Dotlas-authored general utilities.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/generic/custom/closed-plan",
-        "./skills/generic/custom/codebase-integrity",
-        "./skills/generic/custom/commit",
-        "./skills/generic/custom/diagnostic-loop",
-        "./skills/generic/custom/eli5",
-        "./skills/generic/custom/import-skill",
-        "./skills/generic/custom/introspection",
-        "./skills/generic/custom/plan-with-me",
-        "./skills/generic/custom/slack"
+        "./skills/custom/common/closed-plan",
+        "./skills/custom/common/introspection",
+        "./skills/custom/common/look-into-it",
+        "./skills/custom/common/plan-with-me",
+        "./skills/custom/common/slack",
+        "./skills/custom/common/unpack"
       ]
     },
     {
-      "name": "community-generic",
-      "description": "Third-party generic skills vendored from the web.",
+      "name": "custom-coding",
+      "description": "Dotlas-authored coding workflows.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/generic/community/caveman",
-        "./skills/generic/community/grill-me",
-        "./skills/generic/community/grill-with-docs",
-        "./skills/generic/community/grilling",
-        "./skills/generic/community/handoff",
-        "./skills/generic/community/improve-codebase-architecture",
-        "./skills/generic/community/qa",
-        "./skills/generic/community/resolving-merge-conflicts",
-        "./skills/generic/community/teach",
-        "./skills/generic/community/write-a-skill",
-        "./skills/generic/community/writing-great-skills",
-        "./skills/generic/community/writing-guidelines"
+        "./skills/custom/coding/codebase-integrity",
+        "./skills/custom/coding/commit",
+        "./skills/custom/coding/import-skill",
+        "./skills/custom/coding/tidy-next-codebase",
+        "./skills/custom/coding/ui-consolidation",
+        "./skills/custom/coding/vercel-env-sync",
+        "./skills/custom/coding/vercel-logs"
       ]
     },
     {
-      "name": "custom-frontend",
-      "description": "First-party frontend / Next.js skills.",
+      "name": "community-common",
+      "description": "General-purpose agent utilities vendored from the web.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/frontend/custom/frontend-codebase-integrity",
-        "./skills/frontend/custom/frontend-quality",
-        "./skills/frontend/custom/tidy-next-codebase",
-        "./skills/frontend/custom/ui-consolidation",
-        "./skills/frontend/custom/vercel-env-sync",
-        "./skills/frontend/custom/vercel-logs"
+        "./skills/community/common/caveman",
+        "./skills/community/common/grill-me",
+        "./skills/community/common/grill-with-docs",
+        "./skills/community/common/grilling",
+        "./skills/community/common/handoff",
+        "./skills/community/common/teach",
+        "./skills/community/common/write-a-skill",
+        "./skills/community/common/writing-great-skills",
+        "./skills/community/common/writing-guidelines"
       ]
     },
     {
-      "name": "community-frontend",
-      "description": "Third-party frontend skills vendored from the web.",
+      "name": "community-coding",
+      "description": "Code quality, review, and deployment skills vendored from the web.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/frontend/community/emil-design-eng",
-        "./skills/frontend/community/impeccable",
-        "./skills/frontend/community/vercel-optimize",
-        "./skills/frontend/community/vercel-react-best-practices"
+        "./skills/community/coding/improve-codebase-architecture",
+        "./skills/community/coding/qa",
+        "./skills/community/coding/resolving-merge-conflicts",
+        "./skills/community/coding/vercel-optimize",
+        "./skills/community/coding/vercel-react-best-practices"
       ]
     },
     {
-      "name": "custom-data",
-      "description": "First-party data-engineering skills (Databricks / PySpark / Unity Catalog).",
+      "name": "community-ui-ux",
+      "description": "Interface design and frontend polish skills vendored from the web.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/data/custom/pipeline-conventions"
+        "./skills/community/ui-ux/emil-design-eng",
+        "./skills/community/ui-ux/impeccable"
       ]
     }
   ]
