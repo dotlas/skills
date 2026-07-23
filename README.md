@@ -14,15 +14,15 @@ npx skills add dotlas/skills
 npx skills add dotlas/skills -s commit
 
 # A group only (see below)
-npx skills add https://github.com/dotlas/skills/tree/main/skills/frontend
+npx skills add https://github.com/dotlas/skills/tree/main/skills/custom/ui-ux
 ```
 
 ## Groups
 
-Skills are organised as `skills/<category>/<provenance>/<name>/`:
+Skills are organised as `skills/<provenance>/<category>/<name>/`:
 
-- **category** — `generic`, `frontend`, `data`
 - **provenance** — `custom` (authored in-house) or `community` (vendored from the web)
+- **category** — `common`, `ui-ux`, `data`
 
 ## Overriding a skill
 
