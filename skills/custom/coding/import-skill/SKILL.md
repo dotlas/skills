@@ -1,6 +1,6 @@
 ---
 name: import-skill
-description: Import a third-party skill into this owned catalog (Dotlas/skills) from a skills.sh URL, a GitHub repo/subdir, or a pasted `npx skills add` command. Use when the user wants to add, vendor, or import a skill, pastes a skills.sh link or an `npx skills add …` command, and the target is this repo's `skills/` catalog.
+description: Import a third-party skill into this owned catalog (dotlas/skills) from a skills.sh URL, a GitHub repo/subdir, or a pasted `npx skills add` command. Use when the user wants to add, vendor, or import a skill, pastes a skills.sh link or an `npx skills add …` command, and the target is this repo's `skills/` catalog.
 ---
 # Import a skill into this catalog
 
@@ -89,7 +89,7 @@ npx -y skills add . -l
 The completion criterion: the new slug appears under the correct group header (Community
 Frontend / Community Generic / Custom Frontend / Custom Generic) and no
 `skills-lock.json` exists.
-(`npx skills add Dotlas/skills -l` clones the **remote** and only reflects the import
+(`npx skills add dotlas/skills -l` clones the **remote** and only reflects the import
 after it is pushed — use it as a post-push confirmation, not the pre-commit gate.)
 
 ## 8. Commit
