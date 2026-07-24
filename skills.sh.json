@@ -1,0 +1,66 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Custom · common",
+      "description": "Dotlas-authored general utilities",
+      "skills": [
+        "closed-plan",
+        "introspection",
+        "look-into-it",
+        "plan-with-me",
+        "slack",
+        "unpack",
+        "update-global-dotlas-skills"
+      ]
+    },
+    {
+      "title": "Custom · coding",
+      "description": "Dotlas-authored coding workflows",
+      "skills": [
+        "codebase-integrity",
+        "commit",
+        "import-skill",
+        "tidy-next-codebase",
+        "ui-consolidation",
+        "vercel-env-sync",
+        "vercel-logs"
+      ]
+    },
+    {
+      "title": "Community · common",
+      "description": "General-purpose agent utilities",
+      "skills": [
+        "caveman",
+        "grill-me",
+        "grill-with-docs",
+        "grilling",
+        "handoff",
+        "teach",
+        "write-a-skill",
+        "writing-great-skills",
+        "writing-guidelines"
+      ]
+    },
+    {
+      "title": "Community · coding",
+      "description": "Code quality, review, and deployment",
+      "skills": [
+        "improve-codebase-architecture",
+        "qa",
+        "resolving-merge-conflicts",
+        "vercel-optimize",
+        "vercel-react-best-practices"
+      ]
+    },
+    {
+      "title": "Community · ui-ux",
+      "description": "Interface design and frontend polish",
+      "skills": [
+        "emil-design-eng",
+        "impeccable"
+      ]
+    }
+  ]
+}
