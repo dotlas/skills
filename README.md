@@ -1,6 +1,10 @@
 <p align="center">
 <img src="https://avatars.githubusercontent.com/u/88832003" height="64" /> </p>
 
+<p align="center">
+<a href="https://skills.sh/dotlas/skills"><img src="https://skills.sh/b/dotlas/skills" alt="skills.sh" /></a>
+</p>
+
 # Dotlas Skills
 
 A shared catalog of agent skills for Claude Code and compatible AI coding agents.
