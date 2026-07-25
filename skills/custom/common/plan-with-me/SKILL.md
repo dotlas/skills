@@ -1,12 +1,12 @@
 ---
 name: plan-with-me
-description: "Collaborative, human-in-the-loop planning for something new that spans several parts and needs human judgement at each fork. A brainstorming partner that funnels — each question narrows the options, surfaces caveats and breaking points, and co-authors the plan instead of guessing alone. Fits any domain where you plan something new against existing context. Resolves one decision at a time, each with a recommendation, then emits a lightweight plan to hand off for implementation. Use when planning alone would make wrong assumptions, or the user wants to shape something new together."
+description: "Collaborative, human-in-the-loop planning for something new that spans several parts and needs human judgement at each fork. A brainstorming partner that funnels — each fork opens up the real options, then narrows to a decision, surfacing caveats and breaking points, and co-authoring the plan instead of guessing alone. Fits any domain where you plan something new against existing context. Resolves one decision at a time, each with a recommendation, then emits a lightweight plan to hand off for implementation. Use when planning alone would make wrong assumptions, or the user wants to shape something new together."
 ---
 # Plan With Me — Collaborative Planning
 
 A brainstorming partner for building something new.
-It **funnels**: every question narrows the possibilities, sharpens focus, and surfaces
-the caveats and breaking points before they cost anything.
+It **funnels**: each fork opens up to weigh the real options, then narrows to a
+decision — surfacing the caveats and breaking points before they cost anything.
 You stay in the decision seat the whole way — the plan is co-authored, not handed down.
 
 The reason to keep a human in the loop: an agent executes a plan well, but it can’t know
@@ -35,6 +35,9 @@ to something that already exists.
   Running a command to check feasibility is fine; writing the implementation is not.
 - **Match the ambition to the work.** Don’t force a one-line tweak through ten stages,
   or compress a new app into a paragraph.
+- **A conversation, not a questionnaire.** Forks are talked through in text as much as
+  picked in a prompt. `AskUserQuestion` locks a decision — it doesn’t replace the
+  discussion that earns it.
 
 * * *
 
@@ -74,13 +77,37 @@ depends on (in code, often the shape of the data).
 ### Phase 2 — Funnel, one decision at a time
 
 This is the core. Work through the concerns in dependency order — foundational decisions
-before the ones that build on them — resolving each with a single, focused question.
+before the ones that build on them — resolving each through an adaptive open→discuss→lock
+conversation. The through-line is convergence: the plan gets narrower and firmer with each
+fork; the divergence is there to make each convergence well-founded, not to keep options
+open for their own sake.
 
-Each question must be posed with **`AskUserQuestion`** — one call, one question (never
-batch multiple decisions into a single call, as each answer shapes the next question):
+For each fork, follow the pattern:
+
+**1. Size the fork.** Judge how far to open it up. Go deep when the decision is high
+stakes or hard to reverse, when several genuinely viable or non-obvious options exist, or
+when the user is exploring or uncertain. Keep it quick when the decision is local, cheaply
+changed, has an obvious default, or the user is decisive.
+
+**2. Open it up (when it warrants).** Lay the option space out in plain text — candidate
+approaches including the non-obvious and hybrid ones, what each buys and costs, relevant
+information, prior art, a concrete example or two to draw inspiration from. Look under
+every rock so neither party discovers a better path *after* the decision is locked.
+
+**3. Talk it through.** Let it be a back-and-forth — the user reacts, adds context you
+couldn’t have known, rules things out, points somewhere new; you refine the framing in
+response. Free text, not a form. Most of the real thinking happens here.
+
+**4. Lock it.** Converge when the space feels mapped — use your judgement on timing; there
+is no fixed number of exchanges. If the discussion already produced a clear answer, state
+it back and confirm in text. If a crisp pick between comparable options remains, lock it
+with `AskUserQuestion`.
+
+**When you lock with `AskUserQuestion`** — one call, one question (never batch multiple
+decisions into a single call, as each answer shapes the next question):
 - `question`: the specific decision to make, stated plainly.
-- `header`: a short tag ≤ 12 chars for the decision topic (e.g. `"Data shape"`,
-  `"Auth"`).
+- `header`: a short tag ≤ 12 chars for the decision topic (e.g. `”Data shape”`,
+  `”Auth”`).
 - `options`: 2-4 concrete choices — not an open-ended prompt.
   Place the recommended option first and append `(Recommended)` to its label; put the
   reasoning in that option’s `description`. Put counter-arguments or trade-offs in the
