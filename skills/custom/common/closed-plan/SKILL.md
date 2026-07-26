@@ -73,9 +73,11 @@ to `.plan/` if none exists. Plans will be saved there.
 Make each implementation decision and bake it into the plan.
 Never surface these to the user as questions.
 
-### 5. Write the closed checklist
+### 5. Write the closed checklist to disk
 
-Output a numbered (or `- [ ]`) checklist where **every** item:
+Write a numbered (or `- [ ]`) checklist directly to the plan file (see Output rules).
+Do **not** print the checklist body in the chat — write it straight to disk, then tell
+the user the path. Every item must:
 - Names the concrete file/function/symbol it touches and the exact change.
 - Has a clear precondition (what must exist before it) and postcondition (what it
   produces).
@@ -100,8 +102,9 @@ Each of these is an open decision that must be resolved before the plan is finis
 - This skill produces a **plan only** — no production code.
   Reading code and running read-only commands to settle Bucket-B decisions is expected;
   writing the implementation is not.
-- After writing the plan to the response, save it to the plan directory detected in
-  Step 4. Filename: `YYYY-MM-DD-{topic-slug}.md` (kebab-cased from the task statement).
-  Tell the user the path.
+- Write the plan **directly to disk** — do not print the checklist body in the chat.
+  Save to the plan directory detected in Step 4.
+  Filename: `YYYY-MM-DD-{topic-slug}.md` (kebab-cased from the task statement).
+  After writing, tell the user the path and the number of steps.
 - Do not pad the plan with optional or speculative steps.
   Closed means complete, not bloated.
