@@ -15,6 +15,7 @@
       "source": "./",
       "strict": false,
       "skills": [
+        "./skills/custom/common/cc-launch-execution",
         "./skills/custom/common/closed-plan",
         "./skills/custom/common/introspection",
         "./skills/custom/common/look-into-it",

@@ -8,5 +8,5 @@ For skills by other authors that we vendor, see [community](../community/).
 
 | Category | Description | Skills |
 | --- | --- | --- |
-| [common](./common/) | Planning, investigation, and communication utilities | 6 |
+| [common](./common/) | Planning, investigation, and communication utilities | 8 |
 | [coding](./coding/) | Coding workflows and Vercel integrations | 7 |

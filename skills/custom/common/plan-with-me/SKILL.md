@@ -5,8 +5,8 @@ description: "Collaborative, human-in-the-loop planning for something new that s
 # Plan With Me — Collaborative Planning
 
 A brainstorming partner for building something new.
-It **funnels**: each fork opens up to weigh the real options, then narrows to a
-decision — surfacing the caveats and breaking points before they cost anything.
+It **funnels**: each fork opens up to weigh the real options, then narrows to a decision
+— surfacing the caveats and breaking points before they cost anything.
 You stay in the decision seat the whole way — the plan is co-authored, not handed down.
 
 The reason to keep a human in the loop: an agent executes a plan well, but it can’t know
@@ -65,7 +65,8 @@ If nothing is documented, say so and proceed on general best practice — don’
 conventions that aren’t there.
 
 Also note which plan directory the project uses (`.plan/`, `.plans/`, `plans/`) — fall
-back to `.plan/` if none exists. Plans will be saved there.
+back to `.plan/` if none exists.
+Plans will be saved there.
 
 ### Phase 1 — Understand the vision
 
@@ -77,31 +78,35 @@ depends on (in code, often the shape of the data).
 ### Phase 2 — Funnel, one decision at a time
 
 This is the core. Work through the concerns in dependency order — foundational decisions
-before the ones that build on them — resolving each through an adaptive open→discuss→lock
-conversation. The through-line is convergence: the plan gets narrower and firmer with each
-fork; the divergence is there to make each convergence well-founded, not to keep options
-open for their own sake.
+before the ones that build on them — resolving each through an adaptive
+open→discuss→lock conversation.
+The through-line is convergence: the plan gets narrower and firmer with each fork; the
+divergence is there to make each convergence well-founded, not to keep options open for
+their own sake.
 
 For each fork, follow the pattern:
 
-**1. Size the fork.** Judge how far to open it up. Go deep when the decision is high
-stakes or hard to reverse, when several genuinely viable or non-obvious options exist, or
-when the user is exploring or uncertain. Keep it quick when the decision is local, cheaply
-changed, has an obvious default, or the user is decisive.
+**1. Size the fork.** Judge how far to open it up.
+Go deep when the decision is high stakes or hard to reverse, when several genuinely
+viable or non-obvious options exist, or when the user is exploring or uncertain.
+Keep it quick when the decision is local, cheaply changed, has an obvious default, or
+the user is decisive.
 
 **2. Open it up (when it warrants).** Lay the option space out in plain text — candidate
 approaches including the non-obvious and hybrid ones, what each buys and costs, relevant
-information, prior art, a concrete example or two to draw inspiration from. Look under
-every rock so neither party discovers a better path *after* the decision is locked.
+information, prior art, a concrete example or two to draw inspiration from.
+Look under every rock so neither party discovers a better path *after* the decision is
+locked.
 
 **3. Talk it through.** Let it be a back-and-forth — the user reacts, adds context you
 couldn’t have known, rules things out, points somewhere new; you refine the framing in
-response. Free text, not a form. Most of the real thinking happens here.
+response. Free text, not a form.
+Most of the real thinking happens here.
 
-**4. Lock it.** Converge when the space feels mapped — use your judgement on timing; there
-is no fixed number of exchanges. If the discussion already produced a clear answer, state
-it back and confirm in text. If a crisp pick between comparable options remains, lock it
-with `AskUserQuestion`.
+**4. Lock it.** Converge when the space feels mapped — use your judgement on timing;
+there is no fixed number of exchanges.
+If the discussion already produced a clear answer, state it back and confirm in text.
+If a crisp pick between comparable options remains, lock it with `AskUserQuestion`.
 
 **When you lock with `AskUserQuestion`** — one call, one question (never batch multiple
 decisions into a single call, as each answer shapes the next question):
@@ -149,8 +154,9 @@ Adapt to how the user responds:
 
 When the critical decisions are settled (minor ones always remain — that’s fine), write
 a lightweight plan and save it to the plan directory detected in Phase 0. Filename:
-`YYYY-MM-DD-{topic-slug}.md` (kebab-cased from the Phase 1 vision). Tell the user the
-path. It contains:
+`YYYY-MM-DD-{topic-slug}.md` (kebab-cased from the Phase 1 vision).
+Tell the user the path.
+It contains:
 - **Vision** — the feature from first principles, the why and the what, so anyone
   picking up a piece understands the whole.
 - **Decision log** — the numbered decisions from the session.
@@ -171,4 +177,6 @@ one, a single page is the honest size.
 On “save progress” or “let’s pause”, write the current state — decisions, open
 questions, notes — to the plan file (same path as Phase 3, overwriting any prior
 checkpoint). Mark it `status: in-progress` at the top; flip to `status: complete` when
-Phase 3 finalises it. Tell the user the path. Resuming is then just reading it back.
+Phase 3 finalises it.
+Tell the user the path.
+Resuming is then just reading it back.

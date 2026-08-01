@@ -55,6 +55,25 @@ without any on-the-fly judgment calls.
 
 * * *
 
+### [cc-launch-execution](./cc-launch-execution/)
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3NwOWg2Z25tMmw2ZHlxcHQybGdpMGlkMzhpb2ZkbG5leDJ4dm5iNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9vk7uNCSJaOqI/giphy.gif" width="240" />
+
+Launch a finished plan as a background workflow of fresh Sonnet workers, with you as the
+orchestrator.
+
+**Good for:** executing a completed plan (from plan-with-me or closed-plan) as atomic,
+parallelised worker subagents; keeping the planning session unblocked while the work
+runs in the background; large multi-step implementations that should not share a single
+context.
+
+**Try:** `/cc-launch-execution` once a plan is agreed, or after `/closed-plan` say “run
+this with cc-launch-execution”.
+The skill orchestrates fresh Sonnet workers as a background workflow you can watch at
+`/workflows`.
+
+* * *
+
 ### [look-into-it](./look-into-it/)
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzVxbng1MDVpYnNlMmF0ZTE3MnF5M2p1aWJwa2R6bWg1ejB3dGplaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kbtXXtZ7TBpnXH9lTF/giphy.gif" width="240" />

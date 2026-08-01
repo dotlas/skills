@@ -69,7 +69,8 @@ If there are zero Bucket-A questions, skip this — do not invent questions to a
 Explore the relevant code: directory structure, neighbouring modules, naming and import
 conventions, existing utilities to reuse.
 Note which plan directory the project uses (`.plan/`, `.plans/`, `plans/`) — fall back
-to `.plan/` if none exists. Plans will be saved there.
+to `.plan/` if none exists.
+Plans will be saved there.
 Make each implementation decision and bake it into the plan.
 Never surface these to the user as questions.
 
@@ -103,8 +104,8 @@ Each of these is an open decision that must be resolved before the plan is finis
   Reading code and running read-only commands to settle Bucket-B decisions is expected;
   writing the implementation is not.
 - Write the plan **directly to disk** — do not print the checklist body in the chat.
-  Save to the plan directory detected in Step 4.
-  Filename: `YYYY-MM-DD-{topic-slug}.md` (kebab-cased from the task statement).
+  Save to the plan directory detected in Step 4. Filename: `YYYY-MM-DD-{topic-slug}.md`
+  (kebab-cased from the task statement).
   After writing, tell the user the path and the number of steps.
 - Do not pad the plan with optional or speculative steps.
   Closed means complete, not bloated.
