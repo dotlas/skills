@@ -52,6 +52,12 @@ You are the manager / orchestrator and the subagents of the workflow are the wor
   Reserve the shared file for large/common context.
 - Where necessary, add a review subagent at the end of the workflow that validates the
   work of all ancestor agents and if the goal has been met.
+- Do not make a worker wait on a long-running task that lives outside Claude — an async
+  job on another platform, an external run you would poll until it completes, or anything
+  that cannot return within a couple of minutes.
+  When a step depends on such a task, do not chain further workflow tasks behind it.
+  Instead, launch a background task yourself (outside the workflow) that wakes you when
+  the external task finishes, then define a new workflow for whatever comes after.
 
 You must launch the workflow as a background task / process so that the current
 conversation is not blocked.
