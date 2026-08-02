@@ -37,6 +37,21 @@ intent, context, or priorities.
 **Try:** `/plan-with-me redesign our customer onboarding flow`. The skill resolves one
 question at a time, each with a recommendation, before writing a staged plan.
 
+### [where-were-we](./where-were-we/)
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGNzMW9jNXZscmZxZmFmdWR2MG1vbDVqNHJrbHNzeWpyNzVkaDB4ZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lQ1AkXFktuJsnoqO3A/giphy.gif" width="240" />
+
+Recap where a conversation left off: locked decisions, open questions, and what needs
+your attention now.
+
+**Good for:** returning to a long planning or implementation chat after a break; getting
+re-oriented before you continue; picking up a handed-off session without re-reading the
+whole transcript. It short-circuits on shipped milestones and locked decisions so the
+recap surfaces only what still needs you.
+
+**Try:** `/where-were-we` when you come back to a chat and need a skimmable picture of
+where things stand, what’s decided, and what’s still open.
+
 * * *
 
 ### [closed-plan](./closed-plan/)

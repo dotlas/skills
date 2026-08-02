@@ -22,7 +22,8 @@
         "./skills/custom/common/plan-with-me",
         "./skills/custom/common/slack",
         "./skills/custom/common/unpack",
-        "./skills/custom/common/update-global-dotlas-skills"
+        "./skills/custom/common/update-global-dotlas-skills",
+        "./skills/custom/common/where-were-we"
       ]
     },
     {
