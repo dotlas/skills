@@ -70,9 +70,21 @@ without any on-the-fly judgment calls.
 
 * * *
 
-### [cc-launch-execution](./cc-launch-execution/)
+### [cc-launch-subagents](./cc-launch-subagents/)
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3NwOWg2Z25tMmw2ZHlxcHQybGdpMGlkMzhpb2ZkbG5leDJ4dm5iNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9vk7uNCSJaOqI/giphy.gif" width="240" />
+
+Run every step of a session through fresh Sonnet subagents, with you as the orchestrator.
+
+**Good for:** delegating all exploratory and implementation work to atomic, background
+subagent tasks so the main conversation stays unblocked; keeping each worker’s context
+fresh and tightly scoped; breaking large work into independent units you dispatch and
+supervise.
+
+**Try:** `/cc-launch-subagents` at the start of a session where you want to act as
+manager while Sonnet workers do the legwork in the background.
+
+### [cc-launch-workflows](./cc-launch-workflows/)
 
 Launch a finished plan as a background workflow of fresh Sonnet workers, with you as the
 orchestrator.
@@ -82,8 +94,8 @@ parallelised worker subagents; keeping the planning session unblocked while the 
 runs in the background; large multi-step implementations that should not share a single
 context.
 
-**Try:** `/cc-launch-execution` once a plan is agreed, or after `/closed-plan` say “run
-this with cc-launch-execution”.
+**Try:** `/cc-launch-workflows` once a plan is agreed, or after `/closed-plan` say “run
+this with cc-launch-workflows”.
 The skill orchestrates fresh Sonnet workers as a background workflow you can watch at
 `/workflows`.
 

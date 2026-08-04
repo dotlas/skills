@@ -1,5 +1,5 @@
 ---
-name: cc-launch-execution
+name: cc-launch-workflows
 description: On Claude Code, once the planning stage is completed, and if the user prompts you to use this skill, launch the execution of the plan as a workflow.
 ---
 After planning is complete and the user asks to execute, launch the plan as a background

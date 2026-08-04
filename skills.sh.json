@@ -6,7 +6,8 @@
       "title": "Custom · common",
       "description": "Dotlas-authored general utilities",
       "skills": [
-        "cc-launch-execution",
+        "cc-launch-subagents",
+        "cc-launch-workflows",
         "closed-plan",
         "introspection",
         "look-into-it",

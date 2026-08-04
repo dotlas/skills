@@ -15,7 +15,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/custom/common/cc-launch-execution",
+        "./skills/custom/common/cc-launch-subagents",
+        "./skills/custom/common/cc-launch-workflows",
         "./skills/custom/common/closed-plan",
         "./skills/custom/common/introspection",
         "./skills/custom/common/look-into-it",
