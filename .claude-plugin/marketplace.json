@@ -20,6 +20,7 @@
         "./skills/custom/common/closed-plan",
         "./skills/custom/common/introspection",
         "./skills/custom/common/look-into-it",
+        "./skills/custom/common/multi-agent-chat",
         "./skills/custom/common/plan-with-me",
         "./skills/custom/common/slack",
         "./skills/custom/common/unpack",

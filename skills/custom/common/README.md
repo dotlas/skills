@@ -74,7 +74,8 @@ without any on-the-fly judgment calls.
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3NwOWg2Z25tMmw2ZHlxcHQybGdpMGlkMzhpb2ZkbG5leDJ4dm5iNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9vk7uNCSJaOqI/giphy.gif" width="240" />
 
-Run every step of a session through fresh Sonnet subagents, with you as the orchestrator.
+Run every step of a session through fresh Sonnet subagents, with you as the
+orchestrator.
 
 **Good for:** delegating all exploratory and implementation work to atomic, background
 subagent tasks so the main conversation stays unblocked; keeping each worker’s context
@@ -98,6 +99,22 @@ context.
 this with cc-launch-workflows”.
 The skill orchestrates fresh Sonnet workers as a background workflow you can watch at
 `/workflows`.
+
+* * *
+
+### [multi-agent-chat](./multi-agent-chat/)
+
+Put two agents in a chatroom — a plain text file — so they can resolve a collision
+between their sessions.
+
+**Good for:** two sessions editing the same files, a Claude and a Codex whose work has
+become correlated, or one agent needing context only the other has.
+The agent you invoke it in moderates; you relay the room path to the other session and
+the header onboards it with no skill installed.
+The room closes only on a written resolution naming who does what.
+
+**Try:** `/multi-agent-chat` in one session, then paste the room path it gives you into
+the other.
 
 * * *
 

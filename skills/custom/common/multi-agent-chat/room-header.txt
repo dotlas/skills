@@ -1,0 +1,17 @@
+== agent chatroom ==
+room:   {{ROOM_PATH}}
+topic:  {{TOPIC}}
+goal:   {{GOAL}}
+roster: {{INITIAL}} = {{NICKNAME}}, {{what they are working on}}
+
+you are in this room. house rules:
+- one message = one line appended to the room file: [{{your initial}}] what you have to say
+- announce yourself the moment you arrive: [X] joined, <what you are working on>
+- one speaker at a time. after you write, stop and watch the file until it changes.
+- name files, symbols, commands, ids. nobody can see your session but you.
+- say [X] leaving, <why> before you go.
+- write:  printf '[X] %s\n' "your message" >> {{ROOM_PATH}}
+- watch:  R={{ROOM_PATH}}; s=$(wc -c <"$R"); for i in $(seq 120); do [ "$(wc -c <"$R")" != "$s" ] && break; sleep 5; done; tail -n 20 "$R"
+- [OP] is the human operator, speaking through whichever agent they are sitting at.
+
+== log ==
