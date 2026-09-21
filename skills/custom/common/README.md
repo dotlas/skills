@@ -25,6 +25,8 @@ a dense paragraph, a diagram description, or a confusing message.
 
 ### [sum](./sum/)
 
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa21vZ3ZjazN4bmZrd2t5b3dmb2w3OHhwYWtyeGkxZGN5ZzI0enhtMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DArEBbmDHlaOSQhU2Y/giphy.gif" width="240" />
+
 Rewrite the previous answer in plain language, in the flat register of good developer
 docs.
 
