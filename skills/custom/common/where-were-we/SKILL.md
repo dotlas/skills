@@ -1,6 +1,6 @@
 ---
 name: where-were-we
-description: Provide the user with a context refresher when they return to continue planning or extending an implementation of an existing chat.
+description: Provide the user with a refresher of existing chat turns. Useful when the user wants to understand where we stand in the conversation.
 ---
 Provide the user with an ELI5, first-principles recap of the recent conversation turns.
 Assume they are returning after a while to resume work on this task.
