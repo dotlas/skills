@@ -23,6 +23,18 @@ than instructional (teach me this topic).
 **Try:** `/unpack` followed by pasting anything you need explained: a document, a spec,
 a dense paragraph, a diagram description, or a confusing message.
 
+### [sum](./sum/)
+
+Rewrite the previous answer in plain language, in the flat register of good developer
+docs.
+
+**Good for:** a response that came back too technical, too dense, or full of jargon;
+getting the same content back as something you could forward to someone without the
+context. It strips the flourishes and the overlapping restatements rather than
+summarising, so nothing in the answer is lost.
+
+**Try:** `/sum` straight after any reply you had to read twice.
+
 ### [plan-with-me](./plan-with-me/)
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2pnZWkzZ2RubG9iNnkxN2Z2djlscndwNHM3Ym9rOHk5MXptN2ptNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZdUGNB3D5Qb6sKKTke/giphy.gif" width="240" />
