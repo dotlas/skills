@@ -6,9 +6,10 @@ description: >
   open questions with the operator, then either implement the fix or (in advise mode) lay
   out the root cause and 2–3 solution options for the operator to choose. If the issue
   arrived over a chat channel (Slack, or another IM exposed through an MCP), post throttled
-  milestone updates back to the thread — or stay silent and report inline in silent mode.
-  Reporting (post/silent) and resolution (fix/advise) are independent modes chosen at
-  launch. Use when a thread or the operator hands you an issue to look into.
+  milestone updates back to the thread — or stay silent and report inline in silent mode
+  — and mark the issue's progress on it with status reactions. Reporting (post/silent)
+  and resolution (fix/advise) are independent modes chosen at launch. Use when a thread
+  or the operator hands you an issue to look into.
 ---
 # I’ll Look Into It
 
@@ -31,7 +32,8 @@ Defaults reproduce the original behavior.
 - `post` *(default when a channel is present)* — post throttled milestones back to the
   thread, per Updates.
 - `silent` — investigate with the thread as context but **post nothing** to it (no
-  messages; the 🕵️ ack reaction is still allowed unless you also pass `--no-ack`).
+  messages; status reactions are still added unless you also pass `--no-react`, which
+  `--no-ack` still means).
   Surface every milestone inline to the operator instead.
   Use when you don’t want to auto-reply on Slack.
 - With no channel at all, reporting is inherently inline — see investigation-only below.
@@ -81,10 +83,9 @@ back as needed; the fix plan is written only once the investigation is settled.
 If there’s a thread, read it once (`slack_read_thread`, or the channel’s equivalent) and
 digest it per the [slack](../slack/SKILL.md) skill’s standard — what is asked, where it
 stands, and the identifiers (file/table names, error strings, source, country, ids).
-Then **ack** by reacting to the linked message with the detective emoji (🕵️) via
-`slack_add_reaction` — a silent “being looked into” signal, no posted message.
-The ack reaction applies in `post` and `silent` alike (skip it only with `--no-ack`). In
-investigation-only mode, digest the issue as the operator stated it.
+Then **ack** with the 🕵️ status reaction (see Reactions) — a silent “being looked into”
+signal, no posted message.
+In investigation-only mode, digest the issue as the operator stated it.
 
 ### 2. Understand — establish scope, then trace
 
@@ -144,11 +145,11 @@ The plan covers the fix — the files to change, the exact changes, and how to v
 
 ### 5. Implement
 
-Execute the plan: make the fix.
+React 🏗️, then execute the plan: make the fix.
 Verify it against the problem as reported.
 Once the fix is in and verified complete, delete the plan file written in step 4 — it
 has served its purpose and should not linger.
-Then post the **resolution** milestone.
+Then react ♻️ and post the **resolution** milestone.
 
 ## Advise (resolution mode `advise`)
 
@@ -173,6 +174,33 @@ direction (one line, `post` mode only) — never post the full options dump or a
 the thread. There is no `resolution` milestone unless the operator later has you
 implement.
 
+## Reactions
+
+Status reactions mark where the issue stands, on the thread itself, using the
+[slack](../slack/SKILL.md) skill’s Reactions vocabulary (its table holds the
+`slack_add_reaction` names).
+Add each one the moment its point is reached — not on a loop tick:
+
+| When | Reaction |
+| --- | --- |
+| Digest done (ack) | 🕵️ |
+| Root cause settled (Understand concludes) | ✅ |
+| Implementation starts (`fix`) | 🏗️ |
+| Fix implemented and verified (`fix`) | ♻️ |
+| The operator decides not to fix now, or the issue clears on its own | ⏩ |
+
+- **Where:** only on the message that raised the issue.
+  If you were given several permalinks, that is the one reporting the issue — usually
+  the first; ask the operator if it isn’t clear.
+- **Trail, not swap:** reactions accumulate (they can’t be removed), so a full fix reads
+  🕵️ ✅ 🏗️ ♻️. In `advise` mode the trail ends at ✅ unless the operator later has you
+  implement. ⏩ ends it at whatever point the issue is shelved.
+- **Modes:** reactions apply in `post` and `silent` alike — in `silent` they are the
+  thread’s only signal.
+  `--no-react` (or `--no-ack`) skips them all.
+  Investigation-only has no thread, so no reactions.
+- Re-adding a reaction is harmless, so reactions need no dedupe tracking.
+
 ## Updates
 
 **`post` mode.** Run under a 5-minute loop whose only job is to decide, each tick,
@@ -183,10 +211,10 @@ check.
 
 - **Default per tick is silence.** Most ticks send nothing.
   Never post progress filler ("still investigating").
-- **Whitelist only:** (1) **ack** — a 🕵️ reaction on the linked message at start (not a
-  posted message), (2) **blocked-needs-thread**, (3) **root cause settled** (one line,
-  after Understand concludes), (4) **resolution** (fix implemented and verified — `fix`
-  mode only).
+- **Whitelist only:** (1) **blocked-needs-thread**, (2) **root cause settled** (one
+  line, after Understand concludes), (3) **resolution** (fix implemented and verified —
+  `fix` mode only). Status reactions (see Reactions) are not posts and are never
+  throttled by the loop.
 - **Compose** per the [slack](../slack/SKILL.md) standard: lead with the takeaway, facts
   only, short, no jargon.
 - **Dedupe:** track what you have already posted (a small note keyed by thread ts under
@@ -195,7 +223,7 @@ check.
   settled** is posted).
 
 **`silent` mode.** The loop, if launched, posts nothing — no messages of any milestone
-(the 🕵️ ack reaction is still permitted).
+(status reactions are still added, per Reactions).
 Surface every milestone inline to the operator instead, exactly as investigation-only
 does. Prefer launching without the loop.
 
@@ -203,5 +231,5 @@ does. Prefer launching without the loop.
 No loop.
 Surface the same substance inline to the operator as it occurs — root cause when
 Understand concludes, resolution when the fix is verified (or the options when
-`advise`). `ack` and `blocked-needs-thread` are channel concepts and don’t apply: the
-operator is already present and answering, so there’s nothing to throttle.
+`advise`). Reactions and `blocked-needs-thread` are channel concepts and don’t apply:
+the operator is already present and answering, so there’s nothing to throttle.
