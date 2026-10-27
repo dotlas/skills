@@ -102,19 +102,34 @@ Over ~10 sentences or ~200 words, distill again.
 
 A reaction on a message is a status signal, not decoration — the team’s shared
 vocabulary for where an issue stands.
-Use only these, and only to mark status:
+Use only these, and only to mark status.
+
+**Stage** — exactly one on a message at a time:
 
 | Reaction | Name | Means |
 | --- | --- | --- |
-| 🕵️ | `sleuth_or_spy` | Investigating — someone is on it. |
-| ✅ | `white_check_mark` | Acknowledged — the issue is understood (cause found or decision made). With nothing after it, it also reads as done. |
-| 🏗️ | `building_construction` | Building — a fix is being made. |
-| ♻️ | `recycle` | Repaired — the fix is in and verified, or the job was rerun after it. |
-| ⏩ | `fast_forward` | Skipped — not fixing now: deferred, declined, or it clears on its own (e.g. the next scheduled run). |
+| 🕵️ | `sleuth_or_spy` | Investigating — someone is on it; the cause isn’t known yet. |
+| 💡 | `bulb` | Found — the cause and the fix are known, not applied yet. Advice given, or waiting on an approval, stays here. |
+| 🏗️ | `building_construction` | Building — the fix is being made, or its PR is open. |
+| ♻️ | `recycle` | Re-running — the fix is in; a verification run is underway. |
+| ✅ | `white_check_mark` | Resolved — the fix is verified, or there was nothing to fix (expected, by design). |
+| ⏩ | `fast_forward` | Deferred — not fixing now: declined, shelved, or it clears on its own (e.g. the next scheduled run). |
 
-- **Reactions add up; they are never swapped.** The Slack tools can add a reaction but
-  not remove one, so the set on a message reads as a trail and the furthest one along is
-  the current state: 🕵️ → ✅ → 🏗️ → ♻️, or ⏩ at any point.
+**Flag** — beside a stage:
+
+| Reaction | Name | Means |
+| --- | --- | --- |
+| 👬 | `two_men_holding_hands` | Twin — same cause as another thread, linked in the reply. It carries that thread’s stage. |
+
+- **One stage, swapped as it moves.** When the state changes, add the new stage and
+  remove the old one, so the message never shows a stage that no longer holds (no 🕵️
+  once the cause is 💡 found).
+  Typical paths: 🕵️ → 💡 → 🏗️ → ♻️ → ✅; 🏗️ → ✅ when tests verify the fix; 🕵️ → 💡 when
+  only advising; ✅ alone for an expected alert; ⏩ from any stage.
+- **Removing needs a remove tool.** If the session can only add reactions (the Slack MCP
+  has `slack_add_reaction` but no remove), add the new stage and ask the operator to
+  remove the stale one by clicking it.
+  Only the account that added a reaction can remove it.
 - **React on the message that raised the issue** — not on replies, and not on every
   message that mentions it.
 - **Pass the names above** to `slack_add_reaction`. Skip skin-tone variants; they’re

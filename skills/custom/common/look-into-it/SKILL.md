@@ -149,7 +149,7 @@ React 🏗️, then execute the plan: make the fix.
 Verify it against the problem as reported.
 Once the fix is in and verified complete, delete the plan file written in step 4 — it
 has served its purpose and should not linger.
-Then react ♻️ and post the **resolution** milestone.
+Then react ✅ and post the **resolution** milestone.
 
 ## Advise (resolution mode `advise`)
 
@@ -177,24 +177,27 @@ implement.
 ## Reactions
 
 Status reactions mark where the issue stands, on the thread itself, using the
-[slack](../slack/SKILL.md) skill’s Reactions vocabulary (its table holds the
-`slack_add_reaction` names).
-Add each one the moment its point is reached — not on a loop tick:
+[slack](../slack/SKILL.md) skill’s Reactions legend (its tables hold the
+`slack_add_reaction` names and the swap rule).
+Set each stage the moment its point is reached — not on a loop tick:
 
-| When | Reaction |
+| When | Stage |
 | --- | --- |
 | Digest done (ack) | 🕵️ |
-| Root cause settled (Understand concludes) | ✅ |
+| Root cause settled (Understand concludes) | 💡 |
 | Implementation starts (`fix`) | 🏗️ |
-| Fix implemented and verified (`fix`) | ♻️ |
+| A verification run is underway after the fix (`fix`) | ♻️ |
+| Fix implemented and verified (`fix`) | ✅ |
 | The operator decides not to fix now, or the issue clears on its own | ⏩ |
+| The issue turns out to share its cause with another thread | 👬 beside that thread’s stage |
 
 - **Where:** only on the message that raised the issue.
   If you were given several permalinks, that is the one reporting the issue — usually
   the first; ask the operator if it isn’t clear.
-- **Trail, not swap:** reactions accumulate (they can’t be removed), so a full fix reads
-  🕵️ ✅ 🏗️ ♻️. In `advise` mode the trail ends at ✅ unless the operator later has you
-  implement. ⏩ ends it at whatever point the issue is shelved.
+- **Swap, don’t stack:** the message shows one stage — remove the previous one as you
+  add the next (or ask the operator to, when you can only add).
+  In `advise` mode it stays at 💡 unless the operator later has you implement.
+  ⏩ replaces whatever stage the issue is shelved at.
 - **Modes:** reactions apply in `post` and `silent` alike — in `silent` they are the
   thread’s only signal.
   `--no-react` (or `--no-ack`) skips them all.
